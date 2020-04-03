@@ -2,7 +2,7 @@ import json
 
 from mongoengine import EmbeddedDocument
 from mongoengine import StringField, DictField, BooleanField, EmbeddedDocumentField
-from .task_result import TaskResult
+from .result import Result
 
 
 class Task(EmbeddedDocument):

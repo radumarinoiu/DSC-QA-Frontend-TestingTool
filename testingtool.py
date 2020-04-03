@@ -12,4 +12,4 @@ if __name__ == '__main__':
     from TestingTool.testsuite import TestSuite
     from TestingTool.scenario import Scenario
     from TestingTool.task import Task
-    from TestingTool.task_result import TaskResult
+    from TestingTool.result import Result
