@@ -2,3 +2,7 @@
 .idea/
 
 venv/
+
+TestingTool/__pycache__/
+
+TestingTool/geckodriver.log
