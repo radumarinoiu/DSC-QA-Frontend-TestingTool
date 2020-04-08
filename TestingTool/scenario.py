@@ -14,7 +14,6 @@ class Scenario(EmbeddedDocument):
 
     def run(self):
         driver = webdriver.Firefox()
-        driver.implicity_wait(5)
         driver.maximize_window()
         data = []
         result = True
@@ -25,5 +24,5 @@ class Scenario(EmbeddedDocument):
                 data.append(task.result.data)
         if data:
             result = False
-        response_result = Result(result, data)
+        response_result = Result(result=result, data=data)
         return response_result
