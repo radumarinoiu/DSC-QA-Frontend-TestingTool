@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException
+# trebuiau oare si import urile astea?
+
 
 # def example_action(action_args, browser_instance):
 #     some_arg = action_args.get("some_arg")
@@ -14,12 +15,6 @@ def click_element(action_args, browser_instance):
     if x_path_val is None:
         return False, {"err": "You didnt give me an xpath in action_args"}
     else:
-        # prima varianta
-        # try:
-        #     element = browser_instance.find_element_by_xpath(x_path_val)
-        # except NoSuchElementException:
-        #     return False, {"err": "element at given xpath didnt appear on the web page"}
-        # a 2a varianta
         wait = WebDriverWait(browser_instance, 2)
         element = wait.until(EC.presence_of_element_located(
             (By.XPATH, x_path_val)
