@@ -37,7 +37,7 @@ def input_element(action_args, browser_instance):
     if result is False:
         return result, data
     if input_text is None:
-        return False, {"err": {"You didnt give me an input text in action_args"}}
+        return False, {"err": "You didnt give me an input text in action_args"}
     data.sendKeys(input_text)
     return True, {"success": "Element from xpath took the received value"}
 
