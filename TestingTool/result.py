@@ -5,4 +5,6 @@ from mongoengine import DictField, BooleanField
 
 
 class Result(EmbeddedDocument):
-    pass  # I'm just a placeholder
+     result = BooleanField(required = False)
+     data = DictField()
+
