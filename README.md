@@ -1,3 +1,3 @@
-DSC-QA-Frontend-TestingTool
+![](https://github.com/radumarinoiu/DSC-QA-Frontend-TestingTool/workflows/Python%20application/badge.svg)
 
-Latest build: ![](https://github.com/radumarinoiu/DSC-QA-Frontend-TestingTool/workflows/Python%20application/badge.svg)
+DSC-QA-Frontend-TestingTool
