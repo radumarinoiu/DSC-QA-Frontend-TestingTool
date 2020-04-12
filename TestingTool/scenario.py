@@ -1,4 +1,5 @@
 import json
+from webbrowser import get
 
 from mongoengine import EmbeddedDocument
 from mongoengine import StringField, EmbeddedDocumentListField
@@ -13,7 +14,12 @@ class Scenario(EmbeddedDocument):
     tasks = EmbeddedDocumentListField(Task)
 
     def run(self):
-        driver = webdriver.Firefox()
+        with open('./config.json', 'r') as file:
+            config_json_data = json.loads(file.read())
+        driver_path = get(config_json_data)
+        if driver_path is None:
+            raise Exception("You didnt give me a selenium_driver_path")
+        driver = webdriver.Firefox(driver_path)
         driver.maximize_window()
         data = []
         result = True
