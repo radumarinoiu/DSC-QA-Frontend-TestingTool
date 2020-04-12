@@ -15,9 +15,9 @@ class Scenario(EmbeddedDocument):
     tasks = EmbeddedDocumentListField(Task)
 
     def run(self):
-        if not path.exists("./config.json"):
+        if not path.exists("./TestingTool/config.json"):
             raise Exception("File config.json doesn't exist")
-        with open("./config.json", "r") as file:
+        with open("./TestingTool/config.json", "r") as file:
             config_json_data = json.loads(file.read())
         driver_path = config_json_data.get("selenium_driver_path")
         if driver_path is None:
