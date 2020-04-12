@@ -1,0 +1,34 @@
+{
+    "name": "Test Google",
+    "url": "test",
+    "tasks": [
+        {
+            "name": "Go to Google",
+            "action": "go_to_page",
+            "args": {
+                "url": "https://google.com"
+            }
+        },
+        {
+            "name": "Go to Google",
+            "action": "go_to_page",
+            "args": {
+                "url": "https://google.com"
+            }
+        },
+        {
+            "name": "Go to Google",
+            "action": "go_to_page",
+            "args": {
+                "url": "https://google.com"
+            }
+        },
+        {
+            "name": "Go to Google",
+            "action": "go_to_page",
+            "args": {
+                "url": "https://google.com"
+            }
+        }
+    ]
+}
