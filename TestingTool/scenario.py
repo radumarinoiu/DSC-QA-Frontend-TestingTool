@@ -19,9 +19,13 @@ class Scenario(EmbeddedDocument):
         with open("./TestingTool/config.json", "r") as file:
             config_json_data = json.loads(file.read())
         driver_path = config_json_data.get("selenium_driver_path")
+        driver_type = config_json_data.get("selenium_driver_type")
         if driver_path is None:
             raise Exception("You didnt give me a selenium_driver_path")
-        driver = webdriver.Firefox(driver_path)
+        if driver_type == "Firefox":
+            driver = webdriver.Firefox(driver_path)
+        else:
+            driver = webdriver.Chrome(driver_path)
         driver.maximize_window()
         data = []
         result = True

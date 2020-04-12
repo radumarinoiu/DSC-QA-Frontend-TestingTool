@@ -1,0 +1,35 @@
+{
+  "name": "Test Google Translate",
+  "url": "",
+  "tasks": [
+    {
+      "name": "Go to Google",
+      "action": "go_to_page",
+      "args": {
+        "url": "https://google.com"
+      }
+    },
+    {
+      "name": "Press Google Apps",
+      "action": "click_element",
+      "args": {
+        "url": "//*[@id=\"gbwa\"]/div/a"
+      }
+    },
+    {
+      "name": "Press Google Translate",
+      "action": "click_element",
+      "args": {
+        "url": "//*[@id=\"yDmH0d\"]/c-wiz/div/div/c-wiz/div/div/ul[1]/li[1]/a/div[5]/span"
+      }
+    },
+    {
+      "name": "Insert text in left panel",
+      "action": "input_element",
+      "args": {
+        "url": "//*[@id=\"gbwa\"]/div/a",
+        "input_text": "Ce tare e selenium"
+      }
+    }
+  ]
+}
