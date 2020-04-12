@@ -1,5 +1,4 @@
 import json
-import os.path
 
 from os import path
 from mongoengine import EmbeddedDocument
