@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
     scenario1 = Scenario(name="Google Test", url="https://google.com", tasks=[task1, task2])
 
-    with open("TestingTool/tests/scenario_google.json", "r") as f:
+    with open("TestingTool/tests/scenario_example.json", "r") as f:
         scenario2 = Scenario.from_json(f.read())
     test_suite = TestSuite(name="Default Test Suite", scenarios=[scenario1])
     test_suite.run()
