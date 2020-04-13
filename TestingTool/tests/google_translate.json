@@ -1,0 +1,21 @@
+{
+  "name": "Test Google Translate",
+  "url": "",
+  "tasks": [
+    {
+      "name": "Go to Google Translate",
+      "action": "go_to_url",
+      "args": {
+        "url": "https://translate.google.com"
+      }
+    },
+    {
+      "name": "Insert text in left panel",
+      "action": "input_element",
+      "args": {
+        "xpath": "//*[@id=\"source\"]",
+        "input_text": "Ce tare e selenium"
+      }
+    }
+  ]
+}
