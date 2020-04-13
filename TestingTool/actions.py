@@ -1,3 +1,5 @@
+from re import fullmatch
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -42,9 +44,23 @@ def input_element(action_args, browser_instance):
     return True, {"success": "Element from xpath took the received value"}
 
 
+def matches_regex(action_args, browser_instance):
+    result, data = element_from_xpath(action_args, browser_instance)
+    if result is False:
+        return result, data
+    regex = action_args.get("regex")
+    text = data.text
+    print(regex)
+    print(text)
+    if fullmatch(regex, text) is None:
+        return False, {"err": "The regex does not match text"}
+    return True, {"success": "The regex matched the text"}
+
+
 ACTION_LIST = {
     # "example_action": example_action,
     # element_from_xpath does not meet the standard to be here
     "click_element": click_element,
-    "input_element": input_element
+    "input_element": input_element,
+    "matches_regex": matches_regex
 }
