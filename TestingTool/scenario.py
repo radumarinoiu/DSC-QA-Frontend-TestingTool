@@ -1,5 +1,6 @@
 import json
 
+from os import path
 from mongoengine import EmbeddedDocument
 from mongoengine import StringField, EmbeddedDocumentListField
 from .task import Task
@@ -13,7 +14,20 @@ class Scenario(EmbeddedDocument):
     tasks = EmbeddedDocumentListField(Task)
 
     def run(self):
-        driver = webdriver.Firefox()
+        if not path.exists("./TestingTool/config.json"):
+            raise Exception("File config.json doesn't exist")
+        with open("./TestingTool/config.json", "r") as file:
+            config_json_data = json.loads(file.read())
+        driver_path = config_json_data.get("selenium_driver_path")
+        driver_type = config_json_data.get("selenium_driver_type")
+        if driver_path is None:
+            raise Exception("You didnt give me a selenium_driver_path")
+        if driver_type == "Firefox":
+            driver = webdriver.Firefox(executable_path=driver_path)
+        elif driver_type == "Chrome":
+            driver = webdriver.Chrome(executable_path=driver_path)
+        else:
+            raise Exception("Invalid type of path")
         driver.maximize_window()
         data = []
         result = True
