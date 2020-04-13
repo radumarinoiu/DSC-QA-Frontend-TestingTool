@@ -20,4 +20,4 @@ class Task(EmbeddedDocument):
         if self.reverse_result:
             self.result = Result(not result, data)
         else:
-            self.result = Result(result, data)
+            self.result = Result(result=result, data=data)

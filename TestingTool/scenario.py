@@ -23,9 +23,11 @@ class Scenario(EmbeddedDocument):
         if driver_path is None:
             raise Exception("You didnt give me a selenium_driver_path")
         if driver_type == "Firefox":
-            driver = webdriver.Firefox(driver_path)
+            driver = webdriver.Firefox(executable_path=driver_path)
+        elif driver_type == "Chrome":
+            driver = webdriver.Chrome(executable_path=driver_path)
         else:
-            driver = webdriver.Chrome(driver_path)
+            raise Exception("Invalid type of path")
         driver.maximize_window()
         data = []
         result = True
