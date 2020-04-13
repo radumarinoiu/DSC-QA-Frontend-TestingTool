@@ -57,10 +57,23 @@ def matches_regex(action_args, browser_instance):
     return True, {"success": "The regex matched the text"}
 
 
+def contains_text(action_args,browser_instance):
+    result, data = element_from_xpath(action_args, browser_instance)
+    if result is False:
+        return result, data
+    text_value = action_args.get("text_value")
+    text = data.text
+    if text_value in text:
+        return True, {"success": "Text inside element matched pattern"}
+    return False,  {"err": "Text inside element does not match pattern"}
+
+
+
 ACTION_LIST = {
     # "example_action": example_action,
     # element_from_xpath does not meet the standard to be here
     "click_element": click_element,
     "input_element": input_element,
-    "matches_regex": matches_regex
+    "matches_regex": matches_regex,
+    "contains_text": contains_text
 }
