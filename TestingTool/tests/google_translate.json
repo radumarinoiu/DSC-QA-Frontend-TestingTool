@@ -3,31 +3,17 @@
   "url": "",
   "tasks": [
     {
-      "name": "Go to Google",
+      "name": "Go to Google Translate",
       "action": "go_to_url",
       "args": {
-        "url": "https://google.com"
-      }
-    },
-    {
-      "name": "Press Google Apps",
-      "action": "click_element",
-      "args": {
-        "xpath": "//*[@id=\"gbwa\"]/div/a"
-      }
-    },
-    {
-      "name": "Press Google Translate",
-      "action": "click_element",
-      "args": {
-        "xpath": "//html/body/div/c-wiz/div/div/c-wiz/div/div/ul[1]/li[10]"
+        "url": "https://translate.google.com"
       }
     },
     {
       "name": "Insert text in left panel",
       "action": "input_element",
       "args": {
-        "xpath": "//*[@id=\"gbwa\"]/div/a",
+        "xpath": "//*[@id=\"source\"]",
         "input_text": "Ce tare e selenium"
       }
     }
