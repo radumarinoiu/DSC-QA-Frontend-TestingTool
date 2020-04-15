@@ -41,13 +41,18 @@ def input_element(action_args, browser_instance):
     data.sendKeys(input_text)
     return True, {"success": "Element from xpath took the received value"}
 
-def go_to_url(action_args, browser_instance):
-    result, driver = element_from_xpath(action_args, browser_instance)
-    go_to_url = action_args.get("go_to_url")
-    if go_to_url is False :
-       return False, {"err": "Lipseste argumentul go_to_url"}
-    driver.get(go_to_url)
-    return True, {"succes": "Navigated succesfully"}
+def url(action_args, browser_instance):
+    got_to_url = action_args.get("url")
+    if got_to_url is None:
+        return False, { "err" : "No valid url"}
+    browser_instance.get(url)
+    return True,
+
+
+#def example_action(action_args, browser_instance):
+#     some_arg = action_args.get("some_arg")
+#     if some_arg is None:
+#         return False, {"err": "Lipseste argumentul some_arg"}
    
 
 ACTION_LIST = {
@@ -55,5 +60,5 @@ ACTION_LIST = {
     # element_from_xpath does not meet the standard to be here
     "click_element": click_element,
     "input_element": input_element,
-    "go_to_url":go_to_url
+    "url":url
 }
