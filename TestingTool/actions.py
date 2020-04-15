@@ -42,7 +42,7 @@ def input_element(action_args, browser_instance):
     return True, {"success": "Element from xpath took the received value"}
 
 def go_to_url(action_args, browser_instance):
-    result, data = element_from_xpath(action_args, browser_instance)
+    result, driver = element_from_xpath(action_args, browser_instance)
     go_to_url = action_args.get("go_to_url")
     if go_to_url is False :
        return False, {"err": "Lipseste argumentul go_to_url"}
@@ -54,6 +54,6 @@ ACTION_LIST = {
     # "example_action": example_action,
     # element_from_xpath does not meet the standard to be here
     "click_element": click_element,
-    "input_element": input_element
+    "input_element": input_element,
     "go_to_url":go_to_url
 }
