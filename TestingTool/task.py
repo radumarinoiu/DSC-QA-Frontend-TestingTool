@@ -13,12 +13,11 @@ class Task(EmbeddedDocument):
     reverse_result = BooleanField(default=False)
     result = EmbeddedDocumentField(Result)
 
-
-def run(self, browser_instance):
-    data = dict()
-    result = False
-    result, data = ACTION_LIST[self.action](self.args, browser_instance)
-    if self.reverse_result:
-        self.result = Result(not result, data)
-    else:
-        self.result = Result(result, data)
+    def run(self, browser_instance):
+        data = dict()
+        result = False
+        result, data = ACTION_LIST[self.action](self.args, browser_instance)
+        if self.reverse_result:
+            self.result = Result(not result, data)
+        else:
+            self.result = Result(result=result, data=data)
