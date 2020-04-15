@@ -46,7 +46,7 @@ def url(action_args, browser_instance):
     if got_to_url is None:
         return False, { "err" : "No valid url"}
     browser_instance.get(url)
-    return True,
+    return True,{"success": "Valid url"}
 
 
 #def example_action(action_args, browser_instance):
