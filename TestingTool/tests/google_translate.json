@@ -24,5 +24,6 @@
         "xpath": "/html/body/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[2]/div[3]/div[1]/div[2]",
         "regex": ".*How strong is selenium.*"
       }
+    }
   ]
 }
