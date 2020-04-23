@@ -6,3 +6,7 @@ venv/
 TestingTool/__pycache__/
 
 TestingTool/geckodriver.log
+
+TestingTool/config.json
+
+geckodriver.log

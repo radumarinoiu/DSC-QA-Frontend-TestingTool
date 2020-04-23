@@ -1,0 +1,35 @@
+{
+  "name": "Test Search an Image on Google",
+  "url": "",
+  "tasks": [
+    {
+      "name": "Go to Google",
+      "action": "go_to_url",
+      "args": {
+        "url": "https://google.com"
+      }
+    },
+    {
+      "name": "Press the button 'Images' from Google Page",
+      "action": "click_element",
+      "args": {
+        "xpath": "//*[@id=\"gbw\"]/div/div/div[1]/div[2]/a"
+      }
+    },
+    {
+      "name": "Write text in search box",
+      "action": "input_element",
+      "args": {
+        "xpath": "//*[@id=\"sbtc\"]/div/div[2]/input",
+        "input_text": "dsc uaic"
+      }
+    },
+    {
+      "name": "Press the search button",
+      "action": "click_element",
+      "args": {
+        "xpath": "//*[@id=\"sbtc\"]/button"
+      }
+    }
+  ]
+}

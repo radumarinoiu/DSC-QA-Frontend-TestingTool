@@ -1,0 +1,28 @@
+{
+  "name": "Text Search Test on Google",
+  "url": "",
+  "tasks": [
+    {
+      "name": "Go to Google",
+      "action": "url",
+      "args": {
+        "url": "https://google.com"
+      }
+    },
+    {
+      "name": "Write text in search box",
+      "action": "input_element",
+      "args": {
+        "xpath": "//*[@id=\"tsf\"]/div[2]/div[1]/div[1]/div/div[2]/input",
+        "input_text": "dsc uaic"
+      }
+    },
+    {
+      "name": "Press the search button",
+      "action": "click_element",
+      "args": {
+        "xpath": "//*[@id=\"tsf\"]/div[2]/div[1]/div[2]/div[2]/div[2]/center/input[1]"
+      }
+    }
+  ]
+}
