@@ -44,10 +44,10 @@ def input_element(action_args, browser_instance):
     return True, {"success": "Element from xpath took the received value"}
 
 def go_to_url(action_args, browser_instance):
-    got_to_url = action_args.get("url")
-    if got_to_url is None:
+    url = action_args.get("url")
+    if url is None:
         return False, {"err": "No valid url"}
-    browser_instance.get("url")
+    browser_instance.get(url)
     return True,{"success": "Valid url"}
 
 
