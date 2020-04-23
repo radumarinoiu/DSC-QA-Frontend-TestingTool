@@ -43,6 +43,19 @@ def input_element(action_args, browser_instance):
     data.send_keys(input_text)
     return True, {"success": "Element from xpath took the received value"}
 
+def url(action_args, browser_instance):
+    got_to_url = action_args.get("url")
+    if got_to_url is None:
+        return False, { "err" : "No valid url"}
+    browser_instance.get(url)
+    return True,{"success": "Valid url"}
+
+
+#def example_action(action_args, browser_instance):
+#     some_arg = action_args.get("some_arg")
+#     if some_arg is None:
+#         return False, {"err": "Lipseste argumentul some_arg"}
+   
 
 def matches_regex(action_args, browser_instance):
     result, data = element_from_xpath(action_args, browser_instance)
@@ -74,6 +87,7 @@ ACTION_LIST = {
     # element_from_xpath does not meet the standard to be here
     "click_element": click_element,
     "input_element": input_element,
+    "url": url,
     "matches_regex": matches_regex,
     "contains_text": contains_text
 }
