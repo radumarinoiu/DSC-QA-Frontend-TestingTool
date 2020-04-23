@@ -43,11 +43,11 @@ def input_element(action_args, browser_instance):
     data.send_keys(input_text)
     return True, {"success": "Element from xpath took the received value"}
 
-def url(action_args, browser_instance):
+def go_to_url(action_args, browser_instance):
     got_to_url = action_args.get("url")
     if got_to_url is None:
-        return False, { "err" : "No valid url"}
-    browser_instance.get(url)
+        return False, {"err": "No valid url"}
+    browser_instance.get("url")
     return True,{"success": "Valid url"}
 
 
@@ -87,7 +87,7 @@ ACTION_LIST = {
     # element_from_xpath does not meet the standard to be here
     "click_element": click_element,
     "input_element": input_element,
-    "url": url,
+    "go_to_url": go_to_url,
     "matches_regex": matches_regex,
     "contains_text": contains_text
 }
