@@ -70,7 +70,7 @@ def matches_regex(action_args, browser_instance):
     return True, {"success": "The regex matched the text"}
 
 
-def contains_text(action_args,browser_instance):
+def contains_text(action_args, browser_instance):
     result, data = element_from_xpath(action_args, browser_instance)
     if result is False:
         return result, data
