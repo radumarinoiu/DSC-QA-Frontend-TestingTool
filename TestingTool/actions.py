@@ -39,7 +39,7 @@ def input_element(action_args, browser_instance):
     if result is False:
         return result, data
     if input_text is None:
-        return False, {"err": "You didnt give me an input text in action_args"}
+        return False, {"err": "You didnt give me a text in  'input_text'"}
     data.send_keys(input_text)
     return True, {"success": "Element from xpath took the received value"}
 
@@ -63,8 +63,6 @@ def matches_regex(action_args, browser_instance):
         return result, data
     regex = action_args.get("regex")
     text = data.text
-    print(regex)
-    print(text)
     if fullmatch(regex, text) is None:
         return False, {"err": "The regex does not match text"}
     return True, {"success": "The regex matched the text"}
