@@ -39,4 +39,5 @@ class Scenario(EmbeddedDocument):
         if data:
             result = False
         response_result = Result(result=result, data=data)
+        driver.close()
         return response_result
