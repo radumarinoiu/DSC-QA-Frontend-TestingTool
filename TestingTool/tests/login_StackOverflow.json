@@ -20,7 +20,7 @@
             "name": "Insert email",
             "action": "input_element",
             "args": {
-                "xpath": "//*[@id="email"]",
+                "xpath": "//*[@id=\"email\"]",
                 "input_text": "qadsc2020@gmail.com"
             }
         },
@@ -36,7 +36,7 @@
             "name": "Press the Login button",
             "action": "click_element",
             "args": {
-                "xpath": "//*[@id="submit-button"]"
+                "xpath": "//*[@id=\"submit-button\"]"
             }
         }
     ]
