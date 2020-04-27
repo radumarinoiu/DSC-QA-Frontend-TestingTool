@@ -1,43 +1,58 @@
 {
-    "name": "Login Pinterest",
-    "url": "",
-    "tasks": [
-        {
-            "name": "Go to Pinterest",
-            "action": "go_to_url",
-            "args": {
-                "url": "https://ro.pinterest.com/"
-            }
-        },
-        {
-            "name": "Press the Log in button",
-            "action": "click_element",
-            "args": {
-                "xpath": "/html/body/div[1]/div[1]/div[3]/div/div/div[3]/div[1]/div[1]/div[2]/div[1]"
-            }
-        },
-        {
-            "name": "Insert email",
-            "action": "input_element",
-            "args": {
-                "xpath": "//*[@id=\"email\"]",
-                "input_text": "qadsc2020@gmail.com"
-            }
-        },
-        {
-            "name": "Insert password",
-            "action": "input_element",
-            "args": {
-                "xpath": "//*[@id=\"password\"]",
-                "input_text": "qaguys2020"
-            }
-        },
-        {
-            "name": "Press the Login button",
-            "action": "click_element",
-            "args": {
-                "xpath": "/html/body/div[1]/div[1]/div[3]/div/div/div[3]/div[1]/div/div/div[1]/div/div/div/div[3]/form/div[5]/button"
-            }
-        }
-    ]
+  "name": "Login Pinterest",
+  "url": "",
+  "tasks": [
+    {
+      "name": "Go to Pinterest",
+      "action": "go_to_url",
+      "args": {
+        "url": "https://ro.pinterest.com/"
+      }
+    },
+    {
+      "name": "Press the Log in button",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/div[1]/div[1]/div[3]/div/div/div[3]/div[1]/div[1]/div[2]/div[1]"
+      }
+    },
+    {
+      "name": "Insert email",
+      "action": "input_element",
+      "args": {
+        "xpath": "//*[@id=\"email\"]",
+        "input_text": "qadsc2020@gmail.com"
+      }
+    },
+    {
+      "name": "Insert password",
+      "action": "input_element",
+      "args": {
+        "xpath": "//*[@id=\"password\"]",
+        "input_text": "qaguys2020"
+      }
+    },
+    {
+      "name": "Press the Login button",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/div[1]/div[1]/div[3]/div/div/div[3]/div[1]/div/div/div[1]/div/div/div/div[3]/form/div[5]/button"
+      }
+    },
+    {
+      "name": "Press user account button",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/div[2]/div[1]/div[2]/div/div/div/div[2]/div/div/div/div[5]/div[3]/div/a/div/div/div/div/div[1]/img"
+      }
+    },
+    {
+      "name": "Check regex",
+      "action": "matches_regex",
+      "args": {
+        "xpath": "/html/body/div[2]/div[1]/div[3]/div/div/div/div/div[1]/div[2]/div/div/div[1]/div/div/div/div[1]/h1",
+        "regex": "Qadsc2020"
+      }
+    }
+  ]
 }
