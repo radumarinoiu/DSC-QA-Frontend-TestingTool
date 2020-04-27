@@ -29,7 +29,7 @@
             "name": "Press the search bar button",
             "action": "click_element",
             "args": {
-                "xpath": "//*[@id="search-icon-legacy"]/yt-icon"
+                "xpath": "//*[@id=\"search-icon-legacy\"]/yt-icon"
             }
         }
     ]
