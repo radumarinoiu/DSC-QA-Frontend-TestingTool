@@ -1,27 +1,27 @@
 {
-    "name": "Login Twitch",
+    "name": "Login StackOverflow",
     "url": "",
     "tasks": [
         {
-            "name": "Go to Twitch",
+            "name": "Go to StackOverflowsd",
             "action": "go_to_url",
             "args": {
-                "url": "https://www.twitch.tv//"
+                "url": "https://stackoverflow.com/"
             }
         },
         {
             "name": "Press the Log in button",
             "action": "click_element",
             "args": {
-                "xpath": "//*[@id=\"root\"]/div/div[2]/nav/div/div[3]/div[3]/div/div[1]/div[1]/button/div/div"
+                "xpath": "/html/body/header/div/ol[2]/li[2]/a[1]"
             }
         },
         {
-            "name": "Insert username",
+            "name": "Insert email",
             "action": "input_element",
             "args": {
-                "xpath": "//*[@id=\"username\"]",
-                "input_text": "qadsc2020"
+                "xpath": "//*[@id=\"email\"]",
+                "input_text": "qadsc2020@gmail.com"
             }
         },
         {
@@ -29,14 +29,14 @@
             "action": "input_element",
             "args": {
                 "xpath": "//*[@id=\"password\"]",
-                "input_text": "qaguys;1999"
+                "input_text": "qaguys2020"
             }
         },
         {
             "name": "Press the Login button",
             "action": "click_element",
             "args": {
-                "xpath": "/html/body/div[2]/div/div/div/div/div/div[1]/div/div/div[3]/form/div/div[3]/button"
+                "xpath": "//*[@id=\"submit-button\"]"
             }
         }
     ]

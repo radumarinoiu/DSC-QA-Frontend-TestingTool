@@ -39,14 +39,14 @@ def input_element(action_args, browser_instance):
     if result is False:
         return result, data
     if input_text is None:
-        return False, {"err": "You didnt give me an input text in action_args"}
+        return False, {"err": "You didnt give me a text in  'input_text'"}
     data.send_keys(input_text)
     return True, {"success": "Element from xpath took the received value"}
 
-def url(action_args, browser_instance):
-    got_to_url = action_args.get("url")
-    if got_to_url is None:
-        return False, { "err" : "No valid url"}
+def go_to_url(action_args, browser_instance):
+    url = action_args.get("url")
+    if url is None:
+        return False, {"err": "No valid url"}
     browser_instance.get(url)
     return True,{"success": "Valid url"}
 
@@ -63,14 +63,12 @@ def matches_regex(action_args, browser_instance):
         return result, data
     regex = action_args.get("regex")
     text = data.text
-    print(regex)
-    print(text)
     if fullmatch(regex, text) is None:
         return False, {"err": "The regex does not match text"}
     return True, {"success": "The regex matched the text"}
 
 
-def contains_text(action_args,browser_instance):
+def contains_text(action_args, browser_instance):
     result, data = element_from_xpath(action_args, browser_instance)
     if result is False:
         return result, data
@@ -87,7 +85,7 @@ ACTION_LIST = {
     # element_from_xpath does not meet the standard to be here
     "click_element": click_element,
     "input_element": input_element,
-    "url": url,
+    "go_to_url": go_to_url,
     "matches_regex": matches_regex,
     "contains_text": contains_text
 }
