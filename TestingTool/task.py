@@ -17,11 +17,11 @@ class Task(EmbeddedDocument):
         data = dict()
         result = False
         try:
-          result, data = ACTION_LIST[self.action](self.args, browser_instance)
-          if self.reverse_result:
-            self.result = Result(not result, data)
-          else:
-            self.result = Result(result=result, data=data)
-        except NameError as error:
-            self.result = Result(False, error)
-
+            result, data = ACTION_LIST[self.action](self.args, browser_instance)
+        except Exception as error:
+            self.result = Result(False, data=str(error))
+        finally:
+            if self.reverse_result:
+                self.result = Result(not result, data)
+            else:
+                self.result = Result(result=result, data=data)
