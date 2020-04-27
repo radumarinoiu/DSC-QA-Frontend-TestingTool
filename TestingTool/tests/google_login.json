@@ -4,7 +4,7 @@
     "tasks": [
         {
             "name": "Go to Google",
-            "action": "go_to_page",
+            "action": "go_to_url",
             "args": {
                 "url": "https://accounts.google.com/"
             }
