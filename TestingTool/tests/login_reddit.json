@@ -10,10 +10,17 @@
             }
         },
         {
-            "name": "Press the Log in button",
+            "name": "Press the Sign in button",
             "action": "click_element",
             "args": {
                 "xpath": "/html/body/div[1]/div/div/div/div[1]/header/div/div[2]/div/div[1]/a[1]"
+            }
+        },
+        {
+            "name": "switch to iframe",
+            "action": "switch_to_iframe",
+            "args": {
+                "xpath": "/html/body/div[1]/div/div/div/div[3]/div[3]/div/iframe"
             }
         },
         {
@@ -38,7 +45,11 @@
             "args": {
                 "xpath": "/html/body/div/div/div[2]/div/form/div/fieldset[5]/button"
             }
+        },
+        {
+            "name": "switch to main page",
+            "action": "switch_to_default_content",
+            "args": "nothing"
         }
     ]
 }
-
