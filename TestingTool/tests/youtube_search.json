@@ -1,0 +1,36 @@
+{
+    "name": "Go to Youtube",
+    "url": "",
+    "tasks": [
+        {
+            "name": "Go to Youtube",
+            "action": "go_to_url",
+            "args": {
+                "url": "https://www.youtube.com/"
+            }
+        },
+        {
+            "name": "Press the search bar ",
+            "action": "click_element",
+            "args": {
+                "xpath": "//*[@id=\"search\"]"
+            }
+        },
+        {
+            "name": "Insert the search request",
+            "action": "input_element",
+            "args": {
+                "xpath": "//*[@id=\"search\"]",
+                "input_text": "wildlife documentary"
+            }
+        },
+      
+        {
+            "name": "Press the search bar button",
+            "action": "click_element",
+            "args": {
+                "xpath": "//*[@id=\"search-icon-legacy\"]/yt-icon"
+            }
+        }
+    ]
+}
