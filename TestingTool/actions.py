@@ -50,7 +50,7 @@ def go_to_url(action_args, browser_instance):
     if url is None:
         return False, {"err": "No valid url"}
     browser_instance.get(url)
-    return True,{"success": "Valid url"}
+    return True, {"success": "Valid url"}
 
 
 def switch_to_iframe(action_args, browser_instance):
@@ -71,7 +71,7 @@ def switch_to_default_content(action_args, browser_instance):
     browser_instance.switch_to.default_content()
     return True, {"succes": "switched to default content"}
 
-   
+
 def matches_regex(action_args, browser_instance):
     result, data = element_from_xpath(action_args, browser_instance)
     if result is False:
@@ -94,7 +94,6 @@ def contains_text(action_args, browser_instance):
     if text_value in text:
         return True, {"success": "Text inside element matched pattern"}
     return False,  {"err": "Text inside element does not match pattern"}
-
 
 
 ACTION_LIST = {

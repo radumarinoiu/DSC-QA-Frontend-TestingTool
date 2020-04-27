@@ -40,10 +40,11 @@
             }
         },
         {
-            "name": "Press the Login buttton",
-            "action": "click_element",
+            "name": "Press enter",
+            "action": "input_element",
             "args": {
-                "xpath": "/html/body/div/div/div[2]/div/form/div/fieldset[5]/button"
+                "xpath": "//*[@id=\"loginPassword\"]",
+                "input_text": "\ue007"
             }
         },
         {
