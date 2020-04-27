@@ -13,14 +13,14 @@
             "name": "Press the search bar ",
             "action": "click_element",
             "args": {
-                "xpath": "//*[@id="search"]"
+                "xpath": "//*[@id=\"search\"]"
             }
         },
         {
             "name": "Insert search request",
             "action": "input_element",
             "args": {
-                "xpath": "//*[@id="search"]",
+                "xpath": "//*[@id=\"search\"]",
                 "input_text": "wildlife documentary"
             }
         },
