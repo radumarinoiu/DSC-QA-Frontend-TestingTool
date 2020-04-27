@@ -15,7 +15,7 @@ def element_from_xpath(action_args, browser_instance):
     x_path_val = action_args.get("xpath")
     if x_path_val is None:
         return False, {"err": "You didnt give me an xpath in action_args"}
-    wait = WebDriverWait(browser_instance, 2)
+    wait = WebDriverWait(browser_instance, 20)
     try:
         element = wait.until(EC.presence_of_element_located(
             (By.XPATH, x_path_val)
