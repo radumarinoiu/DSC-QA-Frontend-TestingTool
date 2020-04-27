@@ -20,7 +20,7 @@ class Task(EmbeddedDocument):
             result, data = ACTION_LIST[self.action](self.args, browser_instance)
         except Exception as error:
             self.result = Result(False, data=str(error))
-        finally:
+        else:
             if self.reverse_result:
                 self.result = Result(not result, data)
             else:
