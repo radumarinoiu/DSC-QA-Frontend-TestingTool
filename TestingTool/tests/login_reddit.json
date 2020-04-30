@@ -1,0 +1,56 @@
+{
+    "name": "Login Reddit",
+    "url": "",
+    "tasks": [
+        {
+            "name": "Go to Reddit",
+            "action": "go_to_url",
+            "args": {
+                "url": "https://www.reddit.com"
+            }
+        },
+        {
+            "name": "Press the Sign in button",
+            "action": "click_element",
+            "args": {
+                "xpath": "/html/body/div[1]/div/div/div/div[1]/header/div/div[2]/div/div[1]/a[1]"
+            }
+        },
+        {
+            "name": "switch to iframe",
+            "action": "switch_to_iframe",
+            "args": {
+                "xpath": "/html/body/div[1]/div/div/div/div[3]/div[3]/div/iframe"
+            }
+        },
+        {
+            "name": "Insert email",
+            "action": "input_element",
+            "args": {
+                "xpath": "//*[@id=\"loginUsername\"]",
+                "input_text": "qadsc2020"
+            }
+        },
+        {
+            "name": "Insert password",
+            "action": "input_element",
+            "args": {
+                "xpath": "//*[@id=\"loginPassword\"]",
+                "input_text": "qaguys2020"
+            }
+        },
+        {
+            "name": "Press enter",
+            "action": "input_element",
+            "args": {
+                "xpath": "//*[@id=\"loginPassword\"]",
+                "input_text": "\ue007"
+            }
+        },
+        {
+            "name": "switch to main page",
+            "action": "switch_to_default_content",
+            "args": "nothing"
+        }
+    ]
+}
