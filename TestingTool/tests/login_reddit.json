@@ -6,21 +6,7 @@
             "name": "Go to Reddit",
             "action": "go_to_url",
             "args": {
-                "url": "https://www.reddit.com"
-            }
-        },
-        {
-            "name": "Press the Sign in button",
-            "action": "click_element",
-            "args": {
-                "xpath": "/html/body/div[1]/div/div/div/div[1]/header/div/div[2]/div/div[1]/a[1]"
-            }
-        },
-        {
-            "name": "switch to iframe",
-            "action": "switch_to_iframe",
-            "args": {
-                "xpath": "/html/body/div[1]/div/div/div/div[3]/div[3]/div/iframe"
+                "url": "https://www.reddit.com/login/"
             }
         },
         {
@@ -48,9 +34,12 @@
             }
         },
         {
-            "name": "switch to main page",
-            "action": "switch_to_default_content",
-            "args": "nothing"
+            "name": "click elem",
+            "action": "matches_regex",
+            "args": {
+                "xpath": "/html/body/div[1]/div/div/div/div[1]/header/div/div[2]/div[2]/div/div[2]/button/span[1]/span/span/span[1]",
+                "regex": "qadsc2020aaa"
+            }
         }
     ]
 }
