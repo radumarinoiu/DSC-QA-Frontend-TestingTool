@@ -1,3 +1,4 @@
+import time
 from re import fullmatch
 
 from selenium.webdriver.common.by import By
@@ -18,9 +19,10 @@ def element_from_xpath(action_args, browser_instance):
         return False, {"err": "You didnt give me an xpath in action_args"}
     wait = WebDriverWait(browser_instance, 20)
     try:
-        element = wait.until(EC.presence_of_element_located(
+        element = wait.until(EC.element_to_be_clickable(
             (By.XPATH, x_path_val)
         ))
+        time.sleep(0.5)
     except TimeoutException:
         return False, {"err": "Timeout exception when looking for element at given xpath"}
     return True, element
