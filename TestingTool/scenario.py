@@ -23,15 +23,14 @@ class Scenario(EmbeddedDocument):
         driver_type = config_json_data.get("selenium_driver_type")
         if driver_path is None:
             raise Exception("You didnt give me a selenium_driver_path")
-        mobile_mode = self.mobile_mode
-        if mobile_mode is False:
+        if self.mobile_mode is False:
             if driver_type == "Firefox":
                 driver = webdriver.Firefox(executable_path=driver_path)
             elif driver_type == "Chrome":
                 driver = webdriver.Chrome(executable_path=driver_path)
             else:
                 raise Exception("Invalid driver type")
-        elif mobile_mode is True:
+        else:
             if driver_type == "Firefox":
                 user_agent = "Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_0 like Mac OS X; en-us) " \
                              "AppleWebKit/528.18 (KHTML, like Gecko) Version/4.0 Mobile/7A341 Safari/528.16"
