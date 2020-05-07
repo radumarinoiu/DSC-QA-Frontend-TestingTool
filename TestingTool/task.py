@@ -16,8 +16,12 @@ class Task(EmbeddedDocument):
     def run(self, browser_instance):
         data = dict()
         result = False
-        result, data = ACTION_LIST[self.action](self.args, browser_instance)
-        if self.reverse_result:
-            self.result = Result(not result, data)
+        try:
+            result, data = ACTION_LIST[self.action](self.args, browser_instance)
+        except Exception as error:
+            self.result = Result(result=False, data=str(error))
         else:
-            self.result = Result(result=result, data=data)
+            if self.reverse_result:
+                self.result = Result(result=not result, data=data)
+            else:
+                self.result = Result(result=result, data=data)

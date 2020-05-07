@@ -1,3 +1,4 @@
+import time
 from re import fullmatch
 
 from selenium.webdriver.common.by import By
@@ -16,11 +17,12 @@ def element_from_xpath(action_args, browser_instance):
     x_path_val = action_args.get("xpath")
     if x_path_val is None:
         return False, {"err": "You didnt give me an xpath in action_args"}
-    wait = WebDriverWait(browser_instance, 2)
+    wait = WebDriverWait(browser_instance, 20)
     try:
-        element = wait.until(EC.presence_of_element_located(
+        element = wait.until(EC.element_to_be_clickable(
             (By.XPATH, x_path_val)
         ))
+        time.sleep(0.5)
     except TimeoutException:
         return False, {"err": "Timeout exception when looking for element at given xpath"}
     return True, element
@@ -40,7 +42,7 @@ def input_element(action_args, browser_instance):
     if result is False:
         return result, data
     if input_text is None:
-        return False, {"err": "You didnt give me an input text in action_args"}
+        return False, {"err": "You didnt give me a text in  'input_text'"}
     data.send_keys(input_text)
     return True, {"success": "Element from xpath took the received value"}
 
@@ -78,8 +80,6 @@ def matches_regex(action_args, browser_instance):
         return result, data
     regex = action_args.get("regex")
     text = data.text
-    print(regex)
-    print(text)
     if fullmatch(regex, text) is None:
         return False, {"err": "The regex does not match text"}
     return True, {"success": "The regex matched the text"}

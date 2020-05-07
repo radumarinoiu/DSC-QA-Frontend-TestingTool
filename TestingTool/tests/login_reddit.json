@@ -38,7 +38,7 @@
             "action": "matches_regex",
             "args": {
                 "xpath": "/html/body/div[1]/div/div/div/div[1]/header/div/div[2]/div[2]/div/div[2]/button/span[1]/span/span/span[1]",
-                "regex": "qadsc2020"
+                "regex": "qadsc2020aaa"
             }
         }
     ]
