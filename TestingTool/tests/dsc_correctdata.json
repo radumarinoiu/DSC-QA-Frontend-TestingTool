@@ -1,0 +1,154 @@
+{
+    "name": "Validate the correct data on DSC",
+    "url": "",
+    "mobile_mode": "true",
+    "tasks": [
+        {
+            "name": "Go to DSC page",
+            "action": "go_to_url",
+            "args": {
+                "url": "https://79.112.76.0:32774"
+            }
+        },
+        {
+            "name": "Press Register Button ",
+            "action": "click_element",
+            "args": {
+                "xpath": "/html/body/app-root/div/app-welcome-page/div/div[2]/button[1]/span"
+            }
+        },
+        {
+            "name": "Press First name bar ",
+            "action": "click_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-0\"]"
+            }
+        },
+        {
+            "name": "Insert first name",
+            "action": "input_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-0\"]",
+                "input_text": "Adrian "
+            }
+        },
+
+        {
+            "name": "Check if the input is valid",
+            "action": "contains_text",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-0\"]"
+               
+            }
+        },
+        {
+            "name": "Press Last name bar ",
+            "action": "click_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-1\"]"
+            }
+        },
+        {
+            "name": "Insert last name",
+            "action": "input_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-1\"]",
+                "input_text": " Minune"
+            }
+        },
+
+        {
+            "name": "Check if the input is valid",
+            "action": "contains_text",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-1\"]"
+               
+            }
+        },
+        {
+            "name": "Press email bar ",
+            "action": "click_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-7\"]"
+            }
+        },
+
+        {
+            "name": "Insert email adress",
+            "action": "input_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-7\"]",
+                "input_text": "adrianminune@info.uaic.ro"
+            }
+        },
+
+        {
+            "name": "Check if the input is valid",
+            "action": "contains_text",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-7\"]"
+               
+            }
+        },
+        {
+            "name": "Press password bar ",
+            "action": "click_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-8\"]"
+            }
+        },
+
+        {
+            "name": "Insert password",
+            "action": "input_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-8\"]",
+                "input_text": "adrian12312"
+            }
+        },
+
+        {
+            "name": "Check if the input is valid",
+            "action": "contains_text",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-8\"]"
+               
+            }
+        },
+        {
+            "name": "Press repeat password bar ",
+            "action": "click_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-9\"]"
+            }
+        },
+
+        {
+            "name": "Insert the password again",
+            "action": "input_element",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-9\"]",
+                "input_text": "adrian12312"
+            }
+        },
+
+        {
+            "name": "Check if the input is valid",
+            "action": "contains_text",
+            "args": {
+                "xpath": "//*[@id=\"mat-input-9\"]"
+               
+            }
+        },
+        {
+            "name": "Press the Create Account Button ",
+            "action": "click_element",
+            "args": {
+                "xpath": "/html/body/app-root/div/app-register/div/form/button"
+            }
+        }
+        
+      
+        
+    ]
+}
