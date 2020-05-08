@@ -1,0 +1,44 @@
+{
+  "name": "Test validate mail on DSC",
+  "url": "",
+  "mobile_mode":  "true",
+  "tasks": [
+    {
+      "name": "Go to DSC page",
+      "action": "go_to_url",
+      "args": {
+        "url": "http://79.112.76.0:32774"
+      }
+    },
+    {
+      "name": "Press button 'Register' ",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/app-root/div/app-welcome-page/div/div[2]/button[1]"
+      }
+    },
+    {
+      "name": "Write text in email field",
+      "action": "input_element",
+      "args": {
+        "xpath": "//*[@id=\"mat-input-2\"]",
+        "input_text": "dsc uaic"
+      }
+    },
+    {
+      "name": "Click anywhere ",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/app-root/div/app-register/div"
+      }
+    },
+    {
+      "name": "Check error matches regex",
+      "action": "matches_regex",
+      "args": {
+        "xpath": "//*[@id=\"mat-error-13\"]",
+        "regex": "Enter a valid email"
+      }
+    }
+  ]
+}
