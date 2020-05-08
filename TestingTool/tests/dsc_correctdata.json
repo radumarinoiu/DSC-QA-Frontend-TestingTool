@@ -7,7 +7,7 @@
             "name": "Go to DSC page",
             "action": "go_to_url",
             "args": {
-                "url": "https://79.112.76.0:32774"
+                "url":"http://79.112.76.0:32774"
             }
         },
         {
@@ -33,13 +33,12 @@
             }
         },
 
-        {
-            "name": "Check if the input is valid",
-            "action": "contains_text",
+        {  "name": "Check if error message appears",
+            "action" : "contains_text",
             "args": {
-                "xpath": "//*[@id=\"mat-input-0\"]"
-               
-            }
+                "xpath": "//*[@id=\"mat-error-8\"]"
+            },
+            "reverse_result" : true
         },
         {
             "name": "Press Last name bar ",
@@ -56,45 +55,45 @@
                 "input_text": " Minune"
             }
         },
-
         {
-            "name": "Check if the input is valid",
+            "name": "Check if error message appears",
             "action": "contains_text",
             "args": {
-                "xpath": "//*[@id=\"mat-input-1\"]"
-               
-            }
+                "xpath": "//*[@id=\"mat-error-9\"]"
+            },
+            "reverse_result": true
         },
         {
             "name": "Press email bar ",
             "action": "click_element",
             "args": {
-                "xpath": "//*[@id=\"mat-input-7\"]"
+                "xpath": "//*[@id=\"mat-input-2\"]"
             }
         },
 
         {
-            "name": "Insert email adress",
+            "name": "Insert email address",
             "action": "input_element",
             "args": {
-                "xpath": "//*[@id=\"mat-input-7\"]",
+                "xpath": "//*[@id=\"mat-input-2\"]",
                 "input_text": "adrianminune@info.uaic.ro"
             }
         },
 
-        {
-            "name": "Check if the input is valid",
+         {
+            "name": "Check if error message appears",
             "action": "contains_text",
             "args": {
-                "xpath": "//*[@id=\"mat-input-7\"]"
-               
-            }
+                "xpath": "//*[@id=\"mat-error-13\"]"
+            },
+            "reverse_result": true
         },
+
         {
             "name": "Press password bar ",
             "action": "click_element",
             "args": {
-                "xpath": "//*[@id=\"mat-input-8\"]"
+                "xpath": "//*[@id=\"mat-input-3\"]"
             }
         },
 
@@ -102,24 +101,24 @@
             "name": "Insert password",
             "action": "input_element",
             "args": {
-                "xpath": "//*[@id=\"mat-input-8\"]",
+                "xpath": "//*[@id=\"mat-input-3\"]",
                 "input_text": "adrian12312"
             }
         },
 
-        {
-            "name": "Check if the input is valid",
+         {
+            "name": "Check if error message appears",
             "action": "contains_text",
             "args": {
-                "xpath": "//*[@id=\"mat-input-8\"]"
-               
-            }
+                "xpath": "//*[@id=\"mat-error-11\"]"
+            },
+            "reverse_result": true
         },
         {
             "name": "Press repeat password bar ",
             "action": "click_element",
             "args": {
-                "xpath": "//*[@id=\"mat-input-9\"]"
+                "xpath": "//*[@id=\"mat-input-4\"]"
             }
         },
 
@@ -127,19 +126,20 @@
             "name": "Insert the password again",
             "action": "input_element",
             "args": {
-                "xpath": "//*[@id=\"mat-input-9\"]",
+                "xpath": "//*[@id=\"mat-input-4\"]",
                 "input_text": "adrian12312"
             }
         },
 
-        {
-            "name": "Check if the input is valid",
+         {
+            "name": "Check if error message appears",
             "action": "contains_text",
             "args": {
-                "xpath": "//*[@id=\"mat-input-9\"]"
-               
-            }
+                "xpath": "//*[@id=\"mat-error-12\"]"
+            },
+            "reverse_result": true
         },
+
         {
             "name": "Press the Create Account Button ",
             "action": "click_element",
