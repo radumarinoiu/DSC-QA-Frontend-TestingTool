@@ -25,49 +25,7 @@
       }
     },
     {
-      "name": "click first name field (random element from webpage)",
-      "action": "click_element",
-      "args": {
-        "xpath": "//*[@id=\"mat-input-0\"]"
-      }
-    },
-    {
-      "name": "click last name field (random element from webpage)",
-      "action": "click_element",
-      "args": {
-        "xpath": "//*[@id=\"mat-input-1\"]"
-      }
-    },
-    {
-      "name": "click first name field again (random element from webpage)",
-      "action": "click_element",
-      "args": {
-        "xpath": "//*[@id=\"mat-input-0\"]"
-      }
-    },
-    {
-      "name": "click last name field again (random element from webpage)",
-      "action": "click_element",
-      "args": {
-        "xpath": "//*[@id=\"mat-input-1\"]"
-      }
-    },
-    {
       "name": "click title (random element from webpage)",
-      "action": "click_element",
-      "args": {
-        "xpath": "/html/body/app-root/app-header/div/div[2]"
-      }
-    },
-    {
-      "name": "click email again",
-      "action": "click_element",
-      "args": {
-        "xpath": "//*[@id=\"mat-input-2\"]"
-      }
-    },
-    {
-      "name": "click title again",
       "action": "click_element",
       "args": {
         "xpath": "/html/body/app-root/app-header/div/div[2]"
