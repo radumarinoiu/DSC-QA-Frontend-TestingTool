@@ -1,0 +1,43 @@
+{
+  "name": "check if required appears on the first name",
+  "url": "",
+  "mobile_mode":  "true",
+  "tasks": [
+    {
+      "name": "Go to DSC page",
+      "action": "go_to_url",
+      "args": {
+        "url": "http://79.112.76.0:32774"
+      }
+    },
+    {
+      "name": "Press register button ",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/app-root/div/app-welcome-page/div/div[2]/button[1]"
+      }
+    },
+    {
+      "name": "Click First Name field",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/app-root/div/app-register/div/form/div/mat-form-field[1]/div/div[1]/div"
+      }
+    },
+    {
+      "name": "Click anywhere ",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/app-root/div/app-register/div"
+      }
+    },
+    {
+      "name": "Check error matches regex",
+      "action": "matches_regex",
+      "args": {
+        "xpath": "//*[@id=\"mat-error-8\"]",
+        "regex": "First Name is required"
+      }
+    }
+  ]
+}
