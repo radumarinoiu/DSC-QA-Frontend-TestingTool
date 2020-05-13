@@ -1,0 +1,43 @@
+{
+  "name": "test 'email is required' err on dsc front end register",
+  "url": "",
+  "mobile_mode": true,
+  "tasks": [
+    {
+      "name": "Go to dsc frontend",
+      "action": "go_to_url",
+      "args": {
+        "url": "http://79.112.76.0:32774/"
+      }
+    },
+    {
+      "name": "click register",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/app-root/div/app-welcome-page/div/div[2]/button[1]"
+      }
+    },
+    {
+      "name": "click email",
+      "action": "click_element",
+      "args": {
+        "xpath": "//*[@id=\"mat-input-2\"]"
+      }
+    },
+    {
+      "name": "click title (random element from webpage)",
+      "action": "click_element",
+      "args": {
+        "xpath": "/html/body/app-root/app-header/div/div[2]"
+      }
+    },
+    {
+      "name": "check for 'email is required' text",
+      "action": "matches_regex",
+      "args": {
+        "xpath": "//*[@id=\"mat-error-10\"]",
+        "regex": "Email is required"
+      }
+    }
+  ]
+}
