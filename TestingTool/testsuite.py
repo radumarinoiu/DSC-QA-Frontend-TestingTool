@@ -1,31 +1,26 @@
 import json
 import os
 
-from mongoengine import EmbeddedDocument
 from mongoengine import Document
 from mongoengine import StringField, EmbeddedDocumentListField
 from .scenario import Scenario
-from .result import Result
 
 
 class TestSuite(Document):
     name = StringField(max_length=128, required=True)
     scenarios = EmbeddedDocumentListField(Scenario)
+    scenarios_folder = StringField(required=False)
 
     def run(self):
-        data = []
-        result = True
+        scenarios_folder = self.scenarios_folder
+        if scenarios_folder:
+            self.from_folder(directory=scenarios_folder)
         for scenario in self.scenarios:
-            scenario.run()
-            result = scenario.result.result
-            if result is False:
-                data.append(scenario.result.data)
-
-        if data:
-            result = False
-
-        response_result = Result(result=result, data=data)
-        return response_result
+            result = scenario.run()
+            if result.result:
+                print("Scenario {} completed successfully!".format(scenario.name))
+            else:
+                print("Scenario {} failed, reason:\n{}".format(scenario.name, json.dumps(result.data, indent=2)))
 
     def from_folder(self, directory):
         file_names = os.listdir(directory)
@@ -35,5 +30,3 @@ class TestSuite(Document):
             with open(file_path, "r") as file:
                 scenario = Scenario.from_json(file.read())
                 self.scenarios.append(scenario)
-
-
